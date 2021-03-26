@@ -15,6 +15,10 @@ function Heading() {
 }
 
 function Form({ setList }) {
+  const [value, setValue] = useState("");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <form className="form">
       <div>
@@ -26,6 +30,8 @@ function Form({ setList }) {
           name="to-do"
           size="30"
           required
+          value={value}
+          onChange={handleChange}
         ></input>
         <button className="button">
           <span>Submit</span>
