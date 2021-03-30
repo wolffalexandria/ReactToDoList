@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import "./styles.css";
 
 export default function Form({ setList }) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState({ text: "" });
   const handleChange = (e) => {
-    setValue(e.target.value);
+    const entry = {
+      text: e.target.value,
+      id: String(Date.now())
+    };
+    setValue(entry);
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +25,7 @@ export default function Form({ setList }) {
           name="to-do"
           size="30"
           required
-          value={value}
+          value={value.text}
           onChange={handleChange}
         ></input>
         <button className="button">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Heading from "./Heading.js";
 import Form from "./Form.js";
@@ -9,6 +9,10 @@ export default function Container() {
   const addToList = (entry) => {
     setList(list.concat(entry));
   };
+
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
   return (
     <section className="container">
       <Heading />
