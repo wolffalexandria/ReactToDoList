@@ -17,7 +17,7 @@ export default function Container() {
     <section className="container">
       <Heading />
       <Form setList={addToList} />
-      <ToDoList list={list} />
+      <ToDoList list={list} setList={setList} />
     </section>
   );
 }

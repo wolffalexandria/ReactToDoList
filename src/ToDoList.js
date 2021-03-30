@@ -1,21 +1,17 @@
 import React from "react";
 import "./styles.css";
-import setList from "./App.js";
 
-export default function ToDoList({ list }) {
-  const deleteItem = (item) => {
-    setList(
-      list.filter((item) => {
-        return !item.id;
-      })
-    );
+export default function ToDoList({ list, setList }) {
+  console.log(setList);
+  const deleteItem = (id) => {
+    setList(list.filter((item) => item.id !== id));
   };
   return (
     <div>
       <ul className="toDoList">
         {list.map((item) => {
           return (
-            <li onClick={deleteItem} key={item.id}>
+            <li onClick={() => deleteItem(item.id)} key={item.id}>
               {item.text}
             </li>
           );

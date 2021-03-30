@@ -11,6 +11,7 @@ export default function Form({ setList }) {
     setValue(entry);
   };
   const onSubmit = (e) => {
+    setValue({ text: "" });
     e.preventDefault();
     setList(value);
   };
