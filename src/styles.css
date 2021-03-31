@@ -112,10 +112,8 @@ body {
   text-align: left;
 }
 li {
-  position: relative;
   padding: 0.5rem;
-  width: relative;
 }
-li:hover {
+.list:hover {
   text-decoration: line-through wavy #24bffb;
 }

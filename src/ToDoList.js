@@ -12,7 +12,7 @@ export default function ToDoList({ list, setList }) {
         {list.map((item) => {
           return (
             <li onClick={() => deleteItem(item.id)} key={item.id}>
-              {item.text}
+              <span className="list">{item.text}</span>
             </li>
           );
         })}
